@@ -1,13 +1,4 @@
-/**
- *   @author Bates, Howard [ hbates@northmen.org ]
- *   @version 0.0.0
- *   @summary  || Created: 0.00.201X
- *   @todo 
- */
-
 "use strict";
-
-// const FADE = require('./FadeStuff.js');
 
 class main {
      constructor() {
@@ -17,27 +8,6 @@ class main {
           main.handleIndividualsRoll();
           main.handleTotalRoll();
      }
-
-     /*loadInitialData(whichData, columns) {
-          let bustCache = '?' + new Date().getTime();
-          const XHR = new XMLHttpRequest();
-          XHR.open('POST', document.url  + bustCache, true);
-          XHR.setRequestHeader('X-Requested-load', `XMLHttpRequest${whichData}`);
-          XHR.send();
-          XHR.onload = () => {
-               if (XHR.readyState == 4 && XHR.status == 200) {
-                    let zipData = XHR.responseText;
-                    let tempArray, finalData = [];
-                    tempArray = zipData.split(/\r?\n/); //remove newlines
-                    for (let i = 0; i < tempArray.length; i++) {
-                         finalData[i] = tempArray[i].split(/,/).slice(0, columns);
-                    }
-                    if (whichData === 1) {
-                         this.zipCodes = finalData;
-                    }
-               }
-          };
-     }*/
 
      static prepApp() {
           document.getElementById('sliderQty').innerHTML = document.getElementById('slider').value;
@@ -64,7 +34,19 @@ class main {
 
      static handleIndividualsRoll() {
           document.getElementById('individualsRoll').addEventListener('click', () => {
-
+               let dieQty = Number(document.getElementById('dieQty').value);
+               let dieType = Number(document.getElementById('diceType').value);
+               let finalResult = '';
+               let results = [];
+               for (let i = 0; i < dieQty; i++) {
+                    results[i] = Math.floor((Math.random() * dieType) + 1);
+                    if (i < dieQty - 1) {
+                         finalResult += results[i] + ', ';
+                    } else {
+                         finalResult += results[i];
+                    }
+               }
+               document.getElementById('results').innerHTML = finalResult;
           });
      }
 
@@ -74,18 +56,12 @@ class main {
                let dieType = Number(document.getElementById('diceType').value);
                let result = 0;
                for (let i = 0; i < dieQty; i++) {
-                    let roll = Math.floor((Math.random() * dieType) + 1)
-                    result += roll;
-                    console.log(`ROLL: ${roll}, RESULT: ${result}`);
+                    result += Math.floor((Math.random() * dieType) + 1);
                }
-               let finalResult = '' + result;
-               document.getElementById('results').innerHTML = finalResult;
+               result += '';
+               document.getElementById('results').innerHTML = result;
           });
      }
-
-/*	 static fade(direction, fadeWhat) {
-          new FADE(direction, fadeWhat).doFade();
-     }*/
 }
 
 window.addEventListener('load', () => {

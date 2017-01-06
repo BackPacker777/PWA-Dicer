@@ -1,107 +1,107 @@
 <% include public/views/header.ejs %>
 
 <div class="row">
-     <div class="small-2 small-centered columns">
+     <div class="medium-2 medium-centered columns">
          <img src="public/images/dice.jpg" alt="dice">
      </div>
 </div>
 <br>
 <form id="rollResults">
     <div class="row">
-        <div class="small-2 small-centered columns text-center">
+        <div class="medium-2 medium-centered columns text-center">
             <h5>Dice QTY:</h5>
         </div>
     </div>
     <div class="row">
-        <div class="small-6 small-centered columns text-center">
+        <div class="medium-6 medium-centered columns text-center">
             <input type="range" min="1" max="10" value="1" step="1" id="slider">
         </div>
     </div>
     <div class="row">
-        <div class="small-2 small-centered columns text-center">
+        <div class="medium-2 medium-centered columns text-center">
             <h5 id="sliderQty"></h5>
         </div>
     </div>
     <br><br>
-    <div class="row">
-        <div class="small-2 columns">.</div>
-        <div class="small-1 columns text-center">
+    <div class="row medium">
+        <div class="medium-2 columns">.</div>
+        <div class="medium-1 columns text-center">
             <input type="radio" name="dieType" id="d2" value="2">
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <input type="radio" name="dieType" id="d4" value="4">
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <input type="radio" name="dieType" id="d6" value="6">
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <input type="radio" name="dieType" id="d8" value="8">
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <input type="radio" name="dieType" id="d10" value="10">
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <input type="radio" name="dieType" id="d12" value="12">
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <input type="radio" name="dieType" id="d20" value="20">
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <input type="radio" name="dieType" id="d100" value="100">
         </div>
-        <div class="small-2 columns text-right">.</div>
+        <div class="medium-2 columns text-right">.</div>
     </div>
-    <div class="row">
-        <div class="small-2 columns">.</div>
-        <div class="small-1 columns text-center">
+    <div class="row medium">
+        <div class="medium-2 columns">.</div>
+        <div class="medium-1 columns text-center">
             <h5 class="label">d2</h5>
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <h5 class="label">d4</h5>
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <h5 class="label">d6</h5>
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <h5 class="label">d8</h5>
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <h5 class="label">d10</h5>
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <h5 class="label">d12</h5>
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <h5 class="label">d20</h5>
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <h5 class="label">d100</h5>
         </div>
-        <div class="small-2 columns text-right">.</div>
+        <div class="medium-2 columns text-right">.</div>
     </div>
     <br><br><br>
     <div class="row">
-        <div class="small-4 columns">.</div>
-        <div class="small-1 columns">
+        <div class="medium-4 columns">.</div>
+        <div class="medium-1 columns">
             <input type="text" class="text-center" id="dieQty"></input>
         </div>
-        <div class="small-2 columns text-center">
+        <div class="medium-2 columns text-center">
             <h5>DIE</h5>
         </div>
-        <div class="small-1 columns text-center">
+        <div class="medium-1 columns text-center">
             <input type="text" id="diceType" class="text-center"></input>
         </div>
-        <div class="small-4 columns text-right">.</div>
+        <div class="medium-4 columns text-right">.</div>
     </div>
     <br><br>
     <div class="row">
-        <div class="small-6 columns"><span class="large expanded button" id="individualsRoll">Individuals</span></div>
-        <div class="small-6 columns"><span class="large expanded button" id="totalRoll">Total</span></div>
+        <div class="medium-6 columns"><span class="medium expanded button" id="individualsRoll">Individuals</span></div>
+        <div class="medium-6 columns"><span class="medium expanded button" id="totalRoll">Total</span></div>
     </div>
     <br>
     <div class="row">
-        <div class="small-12 columns text-center">
-            <h2 class="large-expanded" id="results"></h2>
+        <div class="medium-12 columns text-center">
+            <h2 class="medium-expanded" id="results"></h2>
         </div>
     </div>
 </form>

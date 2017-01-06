@@ -1,8 +1,3 @@
-/*  AUTHOR: hbates@northmen.org
- *  VERSION: 1.0
- *  CREATED: 12.01.2015
- */
-
 "use strict";
 
 class FadeStuff {
