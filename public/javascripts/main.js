@@ -4,6 +4,7 @@ class main {
      constructor() {
           main.prepApp();
           main.handleSlider();
+          main.handleDieQty();
           main.handleDieType();
           main.handleIndividualsRoll();
           main.handleTotalRoll();
@@ -20,6 +21,17 @@ class main {
           document.getElementById('slider').addEventListener('input', () => {
                document.getElementById('sliderQty').innerHTML = document.getElementById('slider').value;
                document.getElementById('dieQty').value = document.getElementById('slider').value;
+          });
+     }
+
+     static handleDieQty() {
+          const MAX_DICE = 10;
+          document.getElementById('dieQty').addEventListener('change', () => {
+               if (document.getElementById('dieQty').value > MAX_DICE) {
+                    document.getElementById('dieQty').value = MAX_DICE;
+               }
+               document.getElementById('slider').value = document.getElementById('dieQty').value;
+               document.getElementById('sliderQty').innerHTML = document.getElementById('slider').value;
           });
      }
 
