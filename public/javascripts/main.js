@@ -1,3 +1,5 @@
+//  @todo: Do stuff
+
 "use strict";
 
 class main {
@@ -27,7 +29,7 @@ class main {
      static handleDieQty() {
           const MAX_DICE = 10;
           document.getElementById('dieQty').addEventListener('change', () => {
-               if (document.getElementById('dieQty').value > MAX_DICE) {
+               if (document.getElementById('dieQty').value > MAX_DICE || !/^(0-9)$/.test(document.getElementById('dieQty').value)) {
                     document.getElementById('dieQty').value = MAX_DICE;
                }
                document.getElementById('slider').value = document.getElementById('dieQty').value;
@@ -36,7 +38,13 @@ class main {
      }
 
      static handleDieType() {
+          const MAX_TYPE = 999;
           const dieTypes = document.forms["rollResults"].elements["dieType"];
+          document.getElementById('diceType').addEventListener('change', () => {
+               if (document.getElementById('diceType').value > MAX_TYPE || isNaN(document.getElementById('diceType').value)) {
+                    document.getElementById('diceType').value = MAX_TYPE;
+               }
+          });
           for (let i = 0; i < dieTypes.length; i++) {
                dieTypes[i].addEventListener('click', () => {
                     document.getElementById('diceType').value = dieTypes[i].value;

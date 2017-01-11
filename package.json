@@ -5,7 +5,7 @@
   "description": "PWA version of Dicer app",
   "main": "app.js",
   "keywords": [
-    "nedb",
+    "spa",
     "pwa"
   ],
   "author": {
@@ -24,8 +24,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "formidable": "latest",
-    "ejs": "latest",
-    "nedb": "latest"
+    "ejs": "latest"
   }
 }
