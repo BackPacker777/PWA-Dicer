@@ -4,12 +4,23 @@
 
 class main {
      constructor() {
+          main.loadServiceWorker();
           main.prepApp();
           main.handleSlider();
           main.handleDieQty();
           main.handleDieType();
           main.handleIndividualsRoll();
           main.handleTotalRoll();
+     }
+
+     static loadServiceWorker() {
+          if ('serviceWorker' in navigator) {
+               navigator.serviceWorker
+                    .register('/serviceWorker.js')
+                    .then(() => {
+                         console.log('Service Worker Registered');
+                    });
+          }
      }
 
      static prepApp() {
